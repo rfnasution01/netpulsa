@@ -1,11 +1,11 @@
 import { Box, Snackbar, Fade, FadeProps, Alert } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useLoginMutation } from "../../../store/slices/login";
 import { LoginForm, LoginTitle } from ".";
 import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../../store/api";
+import { useLoginMutation } from "../../store/slices/login";
+import { api } from "../../store/api";
 
 export function LoginMain() {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export function LoginMain() {
     Transition: Fade,
   });
   const { vertical, horizontal, open } = state;
-  const [login, { isError, error, isSuccess }] = useLoginMutation();
+  const [login, { isError, error, isSuccess, isLoading }] = useLoginMutation();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -97,6 +97,7 @@ export function LoginMain() {
           password={password}
           setPassword={setPassword}
           handleSubmit={handleSubmit}
+          isLoading={isLoading}
         />
       </Box>
       <Snackbar

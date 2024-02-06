@@ -1,6 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import LoginBg from "../../assets/login-bg.jpg";
-import { LoginMain } from "./fragments";
+import { LoginMain } from "../../feature";
 
 export function LoginHomepage() {
   return (

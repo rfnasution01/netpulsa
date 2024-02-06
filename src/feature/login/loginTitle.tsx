@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import Logo from "../../../assets/logo.png";
+import Logo from "../../assets/logo.png";
 
 export function LoginTitle() {
   return (

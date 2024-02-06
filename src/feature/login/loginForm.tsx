@@ -1,5 +1,6 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { Dispatch, SetStateAction } from "react";
+import { LoadingComponent } from "../../component/ui";
 
 export function LoginForm({
   handleSubmit,
@@ -7,12 +8,14 @@ export function LoginForm({
   password,
   setEmail,
   setPassword,
+  isLoading,
 }: {
   handleSubmit: (event: any) => Promise<void>;
   email: string;
   password: string;
   setEmail: Dispatch<SetStateAction<string>>;
   setPassword: Dispatch<SetStateAction<string>>;
+  isLoading: boolean;
 }) {
   return (
     <Box
@@ -48,6 +51,12 @@ export function LoginForm({
       >
         Form Login
       </Typography>
+      {isLoading && (
+        <Box sx={{ mb: "20px" }}>
+          <LoadingComponent />
+        </Box>
+      )}
+
       <Box
         component="form"
         onSubmit={handleSubmit}
