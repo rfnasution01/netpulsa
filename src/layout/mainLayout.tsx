@@ -1,7 +1,5 @@
 import { Box } from "@mui/material";
-import { SidebarMenuList, SidebarTitle } from "../feature";
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
 import { MainLayoutLabtopView, MainLayoutMobileView } from ".";
 
 export function MainLayout() {

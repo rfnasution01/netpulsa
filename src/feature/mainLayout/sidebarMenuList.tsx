@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { api } from "../../store/api";
+import { LogOut } from "lucide-react";
 
 export function SidebarMenuList({ isShow }: { isShow: boolean }) {
   const location = useLocation();
@@ -17,30 +18,32 @@ export function SidebarMenuList({ isShow }: { isShow: boolean }) {
         flex: 1,
         display: "flex",
         flexDirection: "column",
-        padding: "20px 8px",
+        padding: "20px 0px",
         justifyContent: "space-between",
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: isShow ? "start" : "center",
+          justifyContent: "center",
+          gap: "20px",
+        }}
+      >
         {listMenu.map((item, idx) => (
           <Link key={idx} to={item?.url}>
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "row",
-                gap: "12px",
+                gap: "20px",
                 alignItems: "center",
                 color: item?.url === currentPath ? "#35af00" : "#64748b",
                 borderRadius: item?.url === currentPath ? "30px" : "1px",
-                padding: isShow ? "16px 32px" : "16px",
-                border:
-                  item?.url === currentPath
-                    ? "1px solid #4bcc52"
-                    : "1px solid transparent",
                 ":hover": {
                   color: "#35af00",
                   cursor: "pointer",
-                  borderRadius: "30px",
                 },
               }}
             >
@@ -74,7 +77,12 @@ export function SidebarMenuList({ isShow }: { isShow: boolean }) {
           navigate("/login");
         }}
       >
-        Logout
+        <Box
+          sx={{ display: "flex", alignItems: "center", gap: "8px", py: "4px" }}
+        >
+          <LogOut />
+          {isShow && <Typography>Logout</Typography>}
+        </Box>
       </Button>
     </Box>
   );

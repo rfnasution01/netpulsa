@@ -46,7 +46,12 @@ export function SidebarTitle({
         )}
       </Box>
       <IconButton
-        sx={{ cursor: "pointer", ":hover": { color: "#64748b" } }}
+        sx={{
+          cursor: "pointer",
+          ":hover": { color: "#64748b" },
+          margin: 0,
+          padding: 0,
+        }}
         onClick={() => setIsShow(!isShow)}
       >
         {isShow ? <MoreVertical /> : <MoreHorizontal />}
