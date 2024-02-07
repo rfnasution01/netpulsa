@@ -16,6 +16,8 @@ export const router = createBrowserRouter([
     loader: async () => {
       const jwtPayload = Cookies.get("jwtPayload");
       if (!jwtPayload) {
+        Cookies.remove("jwtPayload", { path: "/" });
+        Cookies.remove("jwt", { path: "/" });
         window.location.href = "/login";
         return null;
       }
