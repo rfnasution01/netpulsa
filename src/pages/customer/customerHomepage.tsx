@@ -1,3 +1,9 @@
+import { Box } from "@mui/material";
+
 export function CustomerHomepage() {
-  return <div className="">Customer Homepage</div>;
+  return (
+    <Box sx={{ bgcolor: "yellow", minWidth: "100%", minHeight: "100%" }}>
+      Customer Homepage
+    </Box>
+  );
 }

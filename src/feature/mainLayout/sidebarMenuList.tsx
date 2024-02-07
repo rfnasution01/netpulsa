@@ -28,7 +28,7 @@ export function SidebarMenuList({ isShow }: { isShow: boolean }) {
           flexDirection: "column",
           alignItems: isShow ? "start" : "center",
           justifyContent: "center",
-          gap: "20px",
+          gap: "28px",
         }}
       >
         {listMenu.map((item, idx) => (

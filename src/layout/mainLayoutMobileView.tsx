@@ -15,7 +15,7 @@ export function MainLayoutMobileView() {
         minHeight: "100vh",
       }}
     >
-      <Box sx={{ flex: 1 }}>
+      <Box sx={{ flex: 1, padding: "20px" }}>
         <Outlet />
       </Box>
       <Box
