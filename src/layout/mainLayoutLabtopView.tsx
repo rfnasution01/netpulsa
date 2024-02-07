@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Dispatch, SetStateAction } from "react";
-import { SidebarMenuList, SidebarTitle } from "../feature";
+import { ContentBreadcrumb, SidebarMenuList, SidebarTitle } from "../feature";
 import { Outlet } from "react-router-dom";
 
 export function MainLayoutLabtopView({
@@ -13,7 +13,10 @@ export function MainLayoutLabtopView({
   return (
     <Box
       sx={{
-        display: "flex",
+        display: {
+          xs: "none",
+          xl: "flex",
+        },
         minWidth: "100%",
         minHeight: "100%",
       }}
@@ -44,7 +47,10 @@ export function MainLayoutLabtopView({
           display: { xs: "none", xl: "block" },
         }}
       >
-        <Outlet />
+        <ContentBreadcrumb />
+        <Box sx={{ mt: "40px" }}>
+          <Outlet />
+        </Box>
       </Box>
     </Box>
   );

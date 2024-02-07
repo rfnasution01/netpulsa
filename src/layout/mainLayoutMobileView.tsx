@@ -13,6 +13,7 @@ export function MainLayoutMobileView() {
         flexDirection: "column",
         minWidth: "100vw",
         minHeight: "100vh",
+        bgcolor: "green",
       }}
     >
       <Box sx={{ flex: 1, padding: "20px" }}>

@@ -18,7 +18,7 @@ export function SidebarMenuList({ isShow }: { isShow: boolean }) {
         flex: 1,
         display: "flex",
         flexDirection: "column",
-        padding: "20px 0px",
+        padding: "30px 0px",
         justifyContent: "space-between",
       }}
     >
