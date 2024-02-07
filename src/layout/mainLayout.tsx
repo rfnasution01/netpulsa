@@ -1,6 +1,7 @@
-import { Box, Grid } from "@mui/material";
-import { SidebarTitle } from "../feature";
+import { Box } from "@mui/material";
+import { SidebarMenuList, SidebarTitle } from "../feature";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 export function MainLayout() {
   const [isShow, setIsShow] = useState<boolean>(true);
@@ -15,18 +16,18 @@ export function MainLayout() {
           },
           flexDirection: "column",
           boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.1)",
-          padding: "20px",
+          position: "sticky",
+          padding: "0px 30px",
+          top: 0,
+          left: 0,
+          maxHeight: "100vh",
         }}
       >
         <SidebarTitle isShow={isShow} setIsShow={setIsShow} />
-        <Box sx={{ flex: 1, bgcolor: "yellow" }}>
-          {isShow && "Lorem ipsum dolor sit amet"}
-        </Box>
+        <SidebarMenuList isShow={isShow} />
       </Box>
       <Box sx={{ padding: "20px", flex: 1 }}>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate
-        </h1>
+        <Outlet />
       </Box>
     </Box>
   );
